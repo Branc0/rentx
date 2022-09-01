@@ -17,6 +17,11 @@ export const Header = styled.View`
   padding-top: 32px;
 `;
 
+export const Body = styled.View`
+  flex: 1;
+  padding: 8px 16px;
+`;
+
 export const TotalCars = styled.Text`
   font-size: ${RFValue(15)}px;
   font-family: ${({ theme }) => theme.fonts.primary_400};
