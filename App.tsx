@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   useFonts,
   Archivo_400Regular,
@@ -17,9 +16,9 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     Archivo_400Regular,
     Archivo_500Medium,
+    Archivo_600SemiBold,
     Inter_400Regular,
     Inter_500Medium,
-    Archivo_600SemiBold,
   });
 
   if (!fontsLoaded) {
