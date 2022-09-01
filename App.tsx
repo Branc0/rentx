@@ -1,8 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React from "react";
 
-import { Home } from './src/screens/home';
+import {
+  useFonts,
+  Archivo_400Regular,
+  Archivo_500Medium,
+  Archivo_600SemiBold,
+} from "@expo-google-fonts/archivo";
+import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
+import AppLoading from "expo-app-loading";
+import { ThemeProvider } from "styled-components/native";
+
+import theme from "./src/styles/theme";
+import { Home } from "./src/screens/home";
 
 export default function App() {
-  return <Home />;
+  const [fontsLoaded] = useFonts({
+    Archivo_400Regular,
+    Archivo_500Medium,
+    Inter_400Regular,
+    Inter_500Medium,
+    Archivo_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    <AppLoading />;
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
+  );
 }
