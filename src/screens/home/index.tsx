@@ -2,12 +2,12 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { RFValue } from "react-native-responsive-fontsize";
 
-import { Body, Container, Header, TotalCars } from "./styles";
+import { Body, CarList, Container, Header, TotalCars } from "./styles";
 import Logo from "../../assets/logo.svg";
 import { CarCard } from "../../components/CarCard";
 
 export function Home() {
-  const carMock = {
+  const cars = {
     name: "RS 5 Coupé",
     brand: "Audi",
     type: "fuel",
@@ -26,7 +26,11 @@ export function Home() {
         <TotalCars>Total de 12 carros</TotalCars>
       </Header>
       <Body>
-        <CarCard data={carMock}></CarCard>
+        <CarList
+          data={[1, 2, 3, 4]}
+          keyExtractor={(item) => String(item)}
+          renderItem={() => <CarCard data={cars} />}
+        />
       </Body>
     </Container>
   );
