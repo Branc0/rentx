@@ -20,7 +20,9 @@ import {
   Price,
   About,
   Accessories,
+  Footer,
 } from "./styles";
+import { Button } from "../../components/Button";
 
 export function CarDetail() {
   return (
@@ -60,6 +62,9 @@ export function CarDetail() {
           para quem gosta de acelerar.
         </About>
       </Content>
+      <Footer>
+        <Button title="Confirmar"></Button>
+      </Footer>
     </Container>
   );
 }
